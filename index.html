@@ -7,6 +7,8 @@
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/f3a64eafd3.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
    
@@ -29,10 +31,46 @@
     </div>
         <h1>JOGO DA VELHA</h1>
 
-        <a href=""><img src="img/recarregar.png" alt="" id="regarregar"></a>
+        <a href="index.html"><img src="img/recarregar.png" alt="" id="regarregar"></a>
     </header>
 
     <main>
+        <div id="btn-container">
+        <button id="2-players"><i class="fas fa-user-friends"></i><p>Jogar com amigo</p></button>
+        <button id="ai-player"><i class="fas fa-robot"></i><p>Jogar com Computador</p</button>
+    </div>
+    <div id="container" class="hide">
+        <div class="box" id="block-1"></div>
+        <div class="box" id="block-2"></div>
+        <div class="box" id="block-3"></div>
+        <div class="box" id="block-4"></div>
+        <div class="box" id="block-5"></div>
+        <div class="box" id="block-6"></div>
+        <div class="box" id="block-7"></div>
+        <div class="box" id="block-8"></div>
+        <div class="box" id="block-9"></div>
+
+        <div id="scoreboard-container">
+            <h3>PLACAR:</h3>
+            <span class="score-box">
+                <span id="x-scoreboard"><i class="fas fa-times"></i></span>:
+                <span id="scoreboard-1">0</span>
+            </span>
+            <span class="score-box">
+                <span id="o-scoreboard"><i class="far fa-circle"></i></span>:
+                <span id="scoreboard-2">0</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="hide">
+        <div class="x" id="x"><i class="fas fa-times"></i></div>
+        <div class="o" id="o" ><i class="far fa-circle"></i></div>
+    </div>
+
+    <div id="message"class="hide">
+        <p>aaaaaaa</p>
+    </div>
 
     </main>
 
