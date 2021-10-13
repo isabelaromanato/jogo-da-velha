@@ -1,77 +1,79 @@
 function onClickMenu(){
-	document.getElementById("menu").classList.toggle("change");
-	document.getElementById("nav").classList.toggle("change");
-	document.getElementById("menu-bg").classList.toggle("change-bg")
+	document.getElementById("menu").classList.toggle("mudar");
+	document.getElementById("nav").classList.toggle("mudar");
+	document.getElementById("menu-bg").classList.toggle("mudar-bg")
 }
 
 let x = document.querySelector(".x");
 let o = document.querySelector(".o");
 let boxes = document.querySelectorAll(".box");
-let buttons = document.querySelectorAll("#btn-container button");
-let messageContainer = document.querySelector("#message");
-let messageText = document.querySelector("#message p");
-let secondPlayer;
+let botoes = document.querySelectorAll("#btn-container button");
+let mensagemContainer = document.querySelector("#mensagem");
+let mensagemText = document.querySelector("#mensagem p");
+let segundoJogador;
 
-//contador de jogadas
-let player1 = 0;
-let player2 = 0;
-
-
+//CONTA AS JOGADAS
+let jogador1 = 0;
+let jogador2 = 0;
 
 
-// adicionar click box
+
+
+//ADICIONANDO CLICK
 for(let i = 0; i < boxes.length; i++){
 
     boxes[i].addEventListener("click", function(){
          
-        let el = checkEl(player1, player2);
+        let el = checkEl(jogador1, jogador2);
         
         if(this.childNodes.length == 0){
             let cloneEl = el.cloneNode(true);
 
                 this.appendChild(cloneEl);
 
-        //computing
-            if(player1 == player2){
-                player1++;
+        //COMPUTANDO AS VITÓRIAS
+            if(jogador1 == jogador2){
+                jogador1++;
 
-                if(secondPlayer == 'ai-player'){
-                    //execute play
+                if(segundoJogador
+                 == 'ai-player'){
+                    //EXECUTANDO O JOGO
                     computerPlay()
 
-                    player2++;
+                    jogador2++;
                 }
 
             }else{
-                player2++;
+                jogador2++;
             }
 
-            // checking winner
+            //VÊ QUEM VENCEU
             checkWinCondition()
         }
     });
 }
-// select game mode event
-for(let i = 0; i < buttons.length; i++){
-    buttons[i].addEventListener("click", function(){
+//SELECIONANDO O MODO EM QUE VAI JOGAR
+for(let i = 0; i < botoes.length; i++){
+    botoes[i].addEventListener("click", function(){
         
-        secondPlayer = this.getAttribute("id");
+        segundoJogador
+     = this.getAttribute("id");
 
-        for(let j = 0; j < buttons.length; j++){
-            buttons[j].style.display = 'none';
+        for(let j = 0; j < botoes.length; j++){
+            botoes[j].style.display = 'none';
         }
 
         setTimeout( function(){
 
             let container = document.querySelector("#container");
-            container.classList.remove("hide");
+            container.classList.remove("quadrado");
         }, 500)
     });
 }
 
-//quem joga
-function checkEl(player1,player2){
-    if(player1 == player2){
+//QUEM ESTÁ JOGANDO
+function checkEl(jogador1,jogador2){
+    if(jogador1 == jogador2){
         el = x;
     }else{
         el = o;
@@ -82,17 +84,17 @@ function checkEl(player1,player2){
 
 function checkWinCondition(){
 
-    let b1 = document.getElementById("block-1");
-    let b2 = document.getElementById("block-2");
-    let b3 = document.getElementById("block-3");
-    let b4 = document.getElementById("block-4");
-    let b5 = document.getElementById("block-5");
-    let b6 = document.getElementById("block-6");
-    let b7 = document.getElementById("block-7");
-    let b8 = document.getElementById("block-8");
-    let b9 = document.getElementById("block-9");
+    let b1 = document.getElementById("bloco-1");
+    let b2 = document.getElementById("bloco-2");
+    let b3 = document.getElementById("bloco-3");
+    let b4 = document.getElementById("bloco-4");
+    let b5 = document.getElementById("bloco-5");
+    let b6 = document.getElementById("bloco-6");
+    let b7 = document.getElementById("bloco-7");
+    let b8 = document.getElementById("bloco-8");
+    let b9 = document.getElementById("bloco-9");
 
-    //horizontal
+    //HORIZONTAL
 
     if(b1.childNodes.length > 0 && b2.childNodes.length > 0 && b3.childNodes.length > 0 ){
 
@@ -154,7 +156,7 @@ function checkWinCondition(){
 
     }
 
-    //vertical
+    //VERTICAL
     if(b1.childNodes.length > 0 && b4.childNodes.length > 0 && b7.childNodes.length > 0 ){
 
         let b1Child = b1.childNodes[0].className;
@@ -233,7 +235,7 @@ function checkWinCondition(){
 
     }
 
-    //diagonal
+    //DIAGONAL
 
     if(b1.childNodes.length > 0 && b5.childNodes.length > 0 && b9.childNodes.length > 0 ){
 
@@ -274,7 +276,7 @@ function checkWinCondition(){
 
     }
 
-    //velha
+    //MOSTRA QUANDO DER VELHA
     let counter = 0;
 
     for(let i = 0; i < boxes.length; i++){
@@ -289,71 +291,41 @@ function checkWinCondition(){
 
 }
 
-//clear and declare winner
+//LIMPA O TABULEIRO E MOSTRA QUEM VENCEU
 
 function declareWinner(winner){
 
-    let scoreboardX= document.querySelector("#scoreboard-1");
-    let scoreboardY= document.querySelector("#scoreboard-2");
+    let placarX= document.querySelector("#placar-1");
+    let placarY= document.querySelector("#placar-2");
     let msg = '';
 
     if(winner == 'x'){
-        scoreboardX.textContent = parseInt(scoreboardX.textContent) + 1;
-        msg = "Player 1 win"
+        placarX.textContent = parseInt(placarX.textContent) + 1;
+        msg = "PARABÉNS JOGADOR 1!!! Você venceu."
     }else if(winner == 'o'){
-        scoreboardY.textContent = parseInt(scoreboardY.textContent) + 1;
-        msg = "Player 2 win";
+        placarY.textContent = parseInt(placarY.textContent) + 1;
+        msg = "PARABÉNS JOGADOR 2!!! Você venceu.";
     }else{
-        msg = "Gave old!"
+        msg = "DEU VELHAAAA!!!"
     }
 
-    //msg
-    messageText.innerHTML = msg;
-    messageContainer.classList.remove("hide");
+    //MENSAGEM
+    mensagemText.innerHTML = msg;
+    mensagemContainer.classList.remove("quadrado");
 
-    //hidding msg
+    //FAZENDO A MENSAGEM DESAPARECER
     setTimeout(function(){
-        messageContainer.classList.add("hide")
+        mensagemContainer.classList.add("quadrado")
     },2000);
 
-    //clear plays
-    player1 = 0;
-    player2 = 0;
+    //LIMPA O PLACAR
+    jogador1 = 0;
+    jogador2 = 0;
 
-    //remove x and o
+    //REMOVE O X E A O QUANDO O JOGO TERMINA
     let boxesToRemove = document.querySelectorAll(".box div");
 
     for(let i = 0; i < boxesToRemove.length; i++){
         boxesToRemove[i].parentNode.removeChild(boxesToRemove[i])
     }
-}
-    
-
-//IA logic
-function computerPlay() {
-
-    let cloneO = o.cloneNode(true);
-    counter = 0;
-    filled = 0;
-
-    for(let i = 0; i < boxes.length; i++){
-
-        let randomNumber = Math.floor(Math.random() * 5);
-
-        if(boxes[i].childNodes[0] == undefined){
-            if(randomNumber <= 1){
-                boxes[i].appendChild(cloneO);
-                counter++;
-                break;
-            }
-        }else {
-            filled++;
-        }
-
-    }
-
-    if(counter == 0 && filled < 9){
-        computerPlay()
-    }
-
 }

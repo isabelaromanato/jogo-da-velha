@@ -28,6 +28,7 @@ header {
 	margin: 30px 0 20px 20px;
 	cursor: pointer;
 }
+
 .bar{
 	height: 5px;
 	width: 100%;
@@ -36,37 +37,42 @@ header {
 	border-radius: 5px;
 	transition: 0.3s ease;
 }
+
 #bar1{
 	transform: translateY(-4px);
 }
+
 #bar3{
 	transform: translateY(4px);
 }
-.nav li a
-{
+
+.nav li a{
 	color: #fff;
 	text-decoration: none;
 }
-.nav li a:hover
-{
+
+.nav li a:hover{
 	font-weight: bold;
 }
-.nav li
-{
+
+.nav li{
 	list-style: none;
 	padding: 16px 0;
 }
+
 .nav{
 	padding: 0;
 	margin: 0 20px;
 	transition: 0.3s ease;
 	display: none;
 }
+
 .menu-bg, #menu-bar{
 	top:0;
 	left: 0;
 	position: absolute;
 }
+
 .menu-bg{
 	z-index: 1;
 	width: 0;
@@ -78,27 +84,31 @@ header {
 }
 #menu-bar{
 	z-index:2;
-
 }
-.change-bg
-{
+
+.mudar-bg{
 	width: 550px;
 	height: 540px;
 	transform: translate(-60%,-30%);
 }
-.change .bar{
+
+.mudar .bar{
 	background-color: black;
 }
-.change #bar1{
+
+.mudar #bar1{
 	transform: translateY(4px) rotateZ(-45deg);
 }
-.change #bar3{
+
+.mudar #bar3{
 	transform: translateY(-6px) rotate(45deg);
 }
-.change #bar2{
+
+.mudar #bar2{
 	opacity: 0;
 }
-.change{
+
+.mudar{
 	display: block;
 } 
 
@@ -123,22 +133,48 @@ header img{
     justify-content: center;
     margin: 30px;
 }
-#btn-container button{
-    border: none;
-    padding: 2vh;
-    background: rgba(0, 0, 0, 0.473);
-    margin: 10px;
 
+#btn-container button{
+    border: solid black;
+    padding: 10px;
+    background: rgba(47, 136, 12, 0.473);
     cursor: pointer;
 }
+
 #btn-container button p{
     display: flex;
     color: cornsilk;
-    margin: 2vh;
+    margin: 10px;
 }
+
 #btn-container button i{
    font-size: 3vh;
    color: rgb(0, 0, 0);
+}
+
+.comoJogar{
+    height: 100vh;
+    background-image: url(./img/comoJogar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.comoJogar p{
+    padding: 20px;
+    font-size: 30px;
+}
+
+.comoJogar h1{
+    padding: 20px;
+    font-size: 50px;
+}
+
+.comoJogar img{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    margin: ;
 }
 
 #container{
@@ -151,6 +187,7 @@ header img{
     margin-left: auto;
     margin-right: auto;
 }
+
 .box{
     height: 100px;
     border: 3px solid rgb(0, 0, 0);
@@ -158,16 +195,19 @@ header img{
     flex: 1 1 33%;
 }
 
-#block-1,#block-2,#block-3{
+#bloco-1,#bloco-2,#bloco-3{
     border-top:none ;
 }
-#block-1,#block-4,#block-7{
+
+#bloco-1,#bloco-4,#bloco-7{
     border-left:none ;
 }
-#block-7,#block-8,#block-9{
+
+#bloco-7,#bloco-8,#bloco-9{
     border-bottom:none ;
 }
-#block-3,#block-6,#block-9{
+
+#bloco-3,#bloco-6,#bloco-9{
     border-right:none ;
 }
 
@@ -177,6 +217,7 @@ header img{
     color: #ff0000;
     line-height: 100px;
 }
+
 .o{
     display: inline-block;
     font-size: 45px;
@@ -189,28 +230,26 @@ h3{
     font-size: 1em;
 }
 
-.score-box{
+.pontuacao-box{
     margin: 10px;
 }
 
-.hide{
+.quadrado{
     display: none !important;
 }
 
-#scoreboard-container{
+#placar-container{
     margin: 0 auto;
     padding: 5vh;
-    
     font-size: 1.5em;
 }
 
-#x-scoreboard{
-    
+#x-placar{
     color: #ff0000;
     margin: 10px;
 }
-#o-scoreboard{
-    
+
+#o-placar{
     color: #00ff0d;
     margin: 10px;
 }
@@ -221,12 +260,10 @@ h3{
     left: 0;
     right: 0;
     top: 35%;
-
     font-size: 3em;
     width: 50vh;
     padding-top: 3vh;
     padding-bottom: 3vh;
-
     background: #000;
     color: #fff;
 }
