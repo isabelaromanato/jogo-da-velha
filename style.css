@@ -224,6 +224,11 @@ header img {
     font-size: 50px;
     color: #ff0000;
     line-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .o {
@@ -231,6 +236,11 @@ header img {
     font-size: 45px;
     color: #00ff0d;
     line-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 h3 {
@@ -253,7 +263,7 @@ h3 {
 
 .x-placar {
     color: black;
-    margin: 10px;
+    margin: 15px;
 }
 
 .o-placar {
