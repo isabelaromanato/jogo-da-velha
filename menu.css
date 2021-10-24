@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ddd3de;
+  background-image: url(./img/a.jpg);
+  color: black;
+  font-family: "Rampart One", cursive;
+}
+
+.comoJogar h1 {
+    padding: 20px;
+    font-size: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+
+.comoJogar p {
+  padding: 20px;
+  font-size: 30px;
+  text-align: justify;
+}
+
+.comoJogar img {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  margin: 15px;
+}
+
+footer {
+    height: 75px;
+    font-style: italic;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }

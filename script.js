@@ -30,9 +30,9 @@ for (let i = 0; i < boxes.length; i++) {
             if (jogador1 == jogador2) {
                 jogador1++;
 
-                if (segundoJogador == "ai-player") {
+                if (segundoJogador == "jogador-maquina") {
                     //EXECUTANDO O JOGO
-                    computerPlay();
+                    computadorJoga();
 
                     jogador2++;
                 }
@@ -216,15 +216,15 @@ function checkWinCondition() {
     }
 
     //MOSTRA QUANDO DER VELHA
-    let counter = 0;
+    let contador = 0;
 
     for (let i = 0; i < boxes.length; i++) {
         if (boxes[i].childNodes[0] != undefined) {
-            counter++;
+            contador++;
         }
     }
 
-    if (counter == 9) {
+    if (contador == 9) {
         declareWinner("Gave old!");
     }
 }
@@ -253,7 +253,7 @@ function declareWinner(winner) {
     //FAZENDO A MENSAGEM DESAPARECER
     setTimeout(function () {
         mensagemContainer.classList.add("quadrado");
-    }, 2000);
+    }, 3000);
 
     //LIMPA O PLACAR
     jogador1 = 0;
@@ -266,3 +266,64 @@ function declareWinner(winner) {
         boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);
     }
 }
+
+//LÓGICA COM COMPUTADOR | NÍVEL FÁCIL
+function computadorJoga() {
+
+    let cloneO = o.cloneNode(true);
+    contador = 0;
+    completo = 0;
+
+    for(let i = 0; i < boxes.length; i++){
+
+        let numeroAleatorio = Math.floor(Math.random() * 5);
+
+        if(boxes[i].childNodes[0] == undefined){
+            if(numeroAleatorio <= 1){
+                boxes[i].appendChild(cloneO);
+                contador++;
+                break;
+            }
+        }else {
+            completo++;
+        }
+
+    }
+
+    if(contador == 0 && completo < 9){
+        computadorJoga()
+    }
+
+}
+
+//LÓGICA COM COMPUTADOR | NÍVEL DÍFICIL
+function computadorJoga() {
+
+    let cloneO = o.cloneNode(true);
+    contador = 0;
+    completo = 0;
+
+    for(let i = 0; i < boxes.length; i++){
+
+        let numeroAleatorio = Math.floor(Math.random() * 5);
+
+        if(boxes[i].childNodes[0] == undefined){
+            if(numeroAleatorio <= 1){
+                boxes[i].appendChild(cloneO);
+                contador++;
+                break;
+            }
+        }else {
+            completo++;
+        }
+
+    }
+
+    if(contador == 0 && completo < 9){
+        computadorJoga()
+    }
+
+}
+
+
+
