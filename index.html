@@ -1,82 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo da Velha</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <script src="https://kit.fontawesome.com/f3a64eafd3.js" crossorigin="anonymous"></script>
-
-</head>
-<body>
-   
-    <header>
-        <div class="menu-completo">
-        <div id="menu-bar">
-            <div id="menu" onclick="onClickMenu()">
-                <div id="bar1" class="bar"></div>
-                <div id="bar2" class="bar"></div>
-                <div id="bar3" class="bar"></div>
-    
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jogo da Velha</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+        <script src="https://kit.fontawesome.com/f3a64eafd3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div class="menu-completo">
+                <div id="menu-bar">
+                    <div id="menu" onclick="onClickMenu()">
+                        <div id="bar1" class="bar"></div>
+                        <div id="bar2" class="bar"></div>
+                        <div id="bar3" class="bar"></div>
+                    </div>
+                    <ul class="nav" id="nav">
+                        <li><a href="contextoHistorico.html">Contexto histórico</a></li>
+                        <li><a href="comoJogar.html">Como jogar</a></li>
+                        <li><a href="#">Dicas</a></li>
+                    </ul>
+                </div>
+                <div class="menu-bg" id="menu-bg"></div>
             </div>
-            <ul class="nav" id="nav">
-                <li><a href="#">O que é?</a></li>
-                <li><a href="comoJogar.html">Como jogar</a></li>
-                <li><a href="#">Dicas</a></li>    
-            </ul>
-        </div>
-        <div class="menu-bg" id="menu-bg"></div>
-    </div>
-        <h1>JOGO DA VELHA</h1>
+            <h1>JOGO DA VELHA</h1>
 
-        <a href="index.html"><img src="img/recarregar.png" alt="" id="regarregar"></a>
-    </header>
+            <a href="index.html"><img src="img/recarregar.png" alt="" id="regarregar" /></a>
+        </header>
 
-    <main>
-        <div id="btn-container">
-        <button id="2-jogadores"><p>JOGADOR x JOGADOR</p></button>
-        <!-- <button id="ai-player"><i class="fas fa-robot"></i><p>Jogar com Computador</p</button> -->
-    </div>
-    <div id="container" class="quadrado">
-        <div class="box" id="bloco-1"></div>
-        <div class="box" id="bloco-2"></div>
-        <div class="box" id="bloco-3"></div>
-        <div class="box" id="bloco-4"></div>
-        <div class="box" id="bloco-5"></div>
-        <div class="box" id="bloco-6"></div>
-        <div class="box" id="bloco-7"></div>
-        <div class="box" id="bloco-8"></div>
-        <div class="box" id="bloco-9"></div>
+        <main>
+            <div id="btn-container">
+                <button id="2-jogadores"><p>JOGADOR x JOGADOR</p></button>
+                <!-- <button id="ai-player"><i class="fas fa-robot"></i><p>Jogar com Computador</p</button> -->
+            </div>
+            <div id="container" class="quadrado">
+                <div class="box" id="bloco-1"></div>
+                <div class="box" id="bloco-2"></div>
+                <div class="box" id="bloco-3"></div>
+                <div class="box" id="bloco-4"></div>
+                <div class="box" id="bloco-5"></div>
+                <div class="box" id="bloco-6"></div>
+                <div class="box" id="bloco-7"></div>
+                <div class="box" id="bloco-8"></div>
+                <div class="box" id="bloco-9"></div>
 
-        <div id="placar-container">
-            <h3>PLACAR:</h3>
-            <span class="pontuacao-box">
-                <span id="x-placar"><i class="fas fa-times"></i></span>:
-                <span id="placar-1">0</span>
-            </span>
-            <span class="pontuacao-box">
-                <span id="o-placar"><i class="far fa-circle"></i></span>:
-                <span id="placar-2">0</span>
-            </span>
-        </div>
-    </div>
+                <div id="placar-container">
+                    <h3>PLACAR:</h3>
+                    <span class="pontuacao-box">
+                        <span><i id="teste-x" class="fas fa-times x-placar"></i></span>:
+                        <span id="placar-1">0</span>
+                    </span>
+                    <span class="pontuacao-box">
+                        <span><i id="teste-o" class="far fa-circle o-placar"></i></span>:
+                        <span id="placar-2">0</span>
+                    </span>
+                </div>
+            </div>
 
-    <div class="quadrado">
-        <div class="x" id="x"><i class="fas fa-times"></i></div>
-        <div class="o" id="o" ><i class="far fa-circle"></i></div>
-    </div>
+            <div class="quadrado">
+                <div class="x" id="x"><i class="fas fa-times"></i></div>
+                <div class="o" id="o"><i class="far fa-circle"></i></div>
+            </div>
 
-    <div id="mensagem"class="quadrado">
-        <p>aaaaaaa</p>
-    </div>
+            <div id="mensagem" class="quadrado">
+                <p>aaaaaaa</p>
+            </div>
+        </main>
 
-    </main>
-
-    <footer>
-        Copyright &copy; 2021 | Ana Araújo e Isabela Romanato
-    </footer>
-    
-</body>
+        <footer>Copyright &copy; 2021 | Ana Araújo e Isabela Romanato</footer>
+    </body>
 </html>
