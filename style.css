@@ -11,8 +11,7 @@ body {
   background: linear-gradient(#9bdd7b, #e5e5e5);
   background-repeat: no-repeat;
   margin: 20px;
-  font-family: "Rampart One", cursive;
- 
+  font-family: 'Rampart One', cursive;
 }
 
 main {
@@ -53,7 +52,7 @@ header {
 }
 
 .nav li a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 
@@ -163,7 +162,7 @@ header img {
 
 .comoJogar {
   height: 100vh;
-  
+
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -296,8 +295,6 @@ h3 {
 
 /*v*/
 
-
-
 .corEmDestaque-x {
   color: #ff0000;
 }
@@ -311,21 +308,80 @@ h3 {
   margin-left: 35px;
 }
 
-
-#mensagem{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+#mensagem {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 footer {
-    height: 75px;
-    font-style: italic;
+  height: 75px;
+  font-style: italic;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  bottom: 0;
+  width: 100%;
+}
+
+.ocultar {
+  visibility: hidden;
+}
+#cbOpcoes {
+  font-size: 15px;
+}
+
+select {
+  background-color: rgb(47, 136, 12, 0.473);
+  color: white;
+  height: 30px;
+  width: 150px;
+  border: solid black;
+  color: #000;
+}
+
+@media (max-width: 750px) {
+  body {
+    background: #9bdd7b;
+    background-repeat: no-repeat;
+    margin: 20px;
+    font-family: 'Rampart One', cursive;
+  }
+  h1 {
+    font-size: 30px;
+
+    margin-top: 60px;
+  }
+  #btn-container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: flex;
-    position: absolute;
-      bottom: 0;
-      width: 100%;
   }
+  .dois-jogadores {
+    height: 100px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .jogador-maquina {
+    height: 100px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #placar-container {
+    margin-bottom: 100px;
+  }
+}

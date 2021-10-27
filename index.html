@@ -27,15 +27,16 @@
                 </div>
                 <div class="menu-bg" id="menu-bg"></div>
             </div>
-            <h1>JOGO DA VELHA</h1>
+            <div id="h1"><h1>JOGO DA VELHA</h1></div>
+            
 
             <a href="index.html"><img src="img/recarregar.png" alt="" id="regarregar" /></a>
         </header>
 
         <main>
             <div id="btn-container">
-                <button id="2-jogadores"><p>JOGADOR x JOGADOR</p></button>
-                <button id="jogador-maquina" class="jogador-maquina" ></i><p>JOGADOR X MÁQUINA</p</button></a>
+                <button class="dois-jogadores" id="2-jogadores"><p>JOGADOR x JOGADOR</p></button>
+                <button class="jogador-maquina"id="jogador-maquina" class="jogador-maquina" ></i><p>JOGADOR X MÁQUINA</p</button></a>
             </div>
             <div id="container" class="quadrado">
                 <div class="box" id="bloco-1"></div>
@@ -48,12 +49,12 @@
                 <div class="box" id="bloco-8"></div>
                 <div class="box" id="bloco-9"></div>
 
-                <div id="cbOpcoes">
+                <div>
                     <select id=cbOpcoes>
-                        <option>SELECIONE O NÍVEL</option>
-                        <option>Fácil</option>
-                        <option>Intermediário</option>
-                        <option>Difícil</option>
+                        <!-- <option selected="true" disabled="disabled">SELECIONE O NÍVEL</option>  -->
+                        <option id="selectFacil">FÁCIL</option>
+                        <option id="selectIntermediario">INTERMEDIÁRIO</option>
+                        <option id="selectDificil">DIFÍCIL</option>
                     </select>
                 </div>
 
