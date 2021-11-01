@@ -331,6 +331,7 @@ footer {
 }
 #cbOpcoes {
   font-size: 15px;
+  
 }
 
 select {
@@ -340,6 +341,7 @@ select {
   width: 150px;
   border: solid black;
   color: #000;
+ 
 }
 
 @media (max-width: 750px) {

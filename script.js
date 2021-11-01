@@ -311,6 +311,16 @@ function declareWinner(winner) {
   }
 }
 
+function selecionandoNivel () {
+  if (select == "selectFacil"){
+    computadorJoga() 
+  }else if (select == "selectIntermediario"){
+    jogoNivelIntermediario()
+  }else {
+    jogoNivelDificil()
+  }
+  
+}
 //LÓGICA COM COMPUTADOR | NÍVEL FÁCIL
 function computadorJoga() {
   let cloneO = o.cloneNode(true);
