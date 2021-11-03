@@ -69,7 +69,7 @@ for (let i = 0; i < botoes.length; i++) {
   });
 }
 
-//QUEM ESTÁ JOGANDO
+//INDICA QUEM ESTÁ JOGANDO | MUDANDO CORES NO SÍMBOLO
 function checkEl(jogador1, jogador2) {
   if (jogador1 == jogador2) {
     el = x;
@@ -311,18 +311,24 @@ function declareWinner(winner) {
   }
 }
 
-function selecionandoNivel () {
-  if (select == "selectFacil"){
-    computadorJoga() 
-  }else if (select == "selectIntermediario"){
-    jogoNivelIntermediario()
-  }else {
-    jogoNivelDificil()
-  }
-  
+function mudarSelect(valor) {
+  console.log(valor);
 }
-//LÓGICA COM COMPUTADOR | NÍVEL FÁCIL
+
+//LÓGICA COM COMPUTADOR |
 function computadorJoga() {
+  const select = document.querySelector('#cbOpcoes').value;
+
+  if (select == 'selectFacil') {
+    jogoNivelFacil();
+  } else if (select == 'selectIntermediario') {
+    // jogoNivelIntermediario();
+  } else {
+    // jogoNivelDificil();
+  }
+}
+
+function jogoNivelFacil() {
   let cloneO = o.cloneNode(true);
   contador = 0;
   completo = 0;
@@ -343,6 +349,25 @@ function computadorJoga() {
 
   if (contador == 0 && completo < 9) {
     computadorJoga();
+  }
+}
+
+function jogoNivelIntermediario() {
+  //HORIZONTAL
+
+  if (
+    b1.childNodes.length > 0 &&
+    b2.childNodes.length > 0 &&
+    b3.childNodes.length > 0
+  ) {
+    let b1Child = b1.childNodes[0].className;
+    let b2Child = b2.childNodes[0].className;
+    let b3Child = b3.childNodes[0].className;
+
+    if (b1Child == 'x' && b3Child == 'x') {
+      //x
+      ((computadorJoga() == 'jogador-maquina') == b2Child) == 'o';
+    }
   }
 }
 
